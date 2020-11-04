@@ -1,1 +1,240 @@
-git logo 
+git_labb logo
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git init
+Initialized empty Git repository in C:/Users/binia/OneDrive/Desktop/git_labb/.gi
+t/
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ git remote add origin https://github.com/biniamhk/git_labb.git
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ echo "this is the first labb of git version control system" >>README.md
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ echo "List of files to be ignored" >>.gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ git add .
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ git commit -m "created .gitignore and readme file"
+[master (root-commit) 42dd3a0] created .gitignore and readme file
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (master)
+$ git branch -M main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 345 bytes | 172.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/git_labb.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git branch developer
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git checkout developer
+Switched to branch 'developer'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git status
+On branch developer
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ echo "git logo " >>log_labb.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git branch
+* developer
+  main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git bracnch
+git: 'bracnch' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git branch
+  developer
+* main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git merge developer
+Already up to date.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        log_labb.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git checkout developer
+Switched to branch 'developer'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git add .
+warning: LF will be replaced by CRLF in log_labb.txt.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git commit -m "created text file"
+[developer f42946a] created text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 log_labb.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git merge developer
+Updating 42dd3a0..f42946a
+Fast-forward
+ log_labb.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 log_labb.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git checkout developer
+Switched to branch 'developer'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git status
+On branch developer
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git push -u origin developer
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'developer' on GitHub by visiting:
+remote:      https://github.com/biniamhk/git_labb/pull/new/developer
+remote:
+To https://github.com/biniamhk/git_labb.git
+ * [new branch]      developer -> developer
+Branch 'developer' set up to track remote branch 'developer' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git add .gitignore
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git commit -m "adding files to be ignored"
+[main df11dc7] adding files to be ignored
+ 1 file changed, 4 insertions(+)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 365 bytes | 365.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/git_labb.git
+   42dd3a0..df11dc7  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git checkout developer
+Switched to branch 'developer'
+Your branch is up to date with 'origin/developer'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git pull
+Already up to date.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$ git log
+commit df11dc77c17602036d23cebf9857dab54d125dee (HEAD -> main, origin/main)
+Author: biniam haile <biniamhk@gmail.com>
+Date:   Wed Nov 4 10:20:53 2020 +0100
+
+    adding files to be ignored
+
+commit f42946a2547c15277d95fee7753c0fc4a857e185 (origin/developer, developer)
+Author: biniam haile <biniamhk@gmail.com>
+Date:   Wed Nov 4 10:11:39 2020 +0100
+
+    created text file
+
+commit 42dd3a04fe3fe5212bd7275ecc1f1d31b4c000dc
+Author: biniam haile <biniamhk@gmail.com>
+Date:   Wed Nov 4 09:59:07 2020 +0100
+
+    created .gitignore and readme file
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/git_labb (main)
+$
+
